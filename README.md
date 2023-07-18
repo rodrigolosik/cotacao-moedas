@@ -8,3 +8,6 @@ Utilizado no desenvolvimento:
 - XUnit
 - Bogus
 - Moq
+
+Para buildar a imagem, executar o comando:
+<code> docker build -t cotacoes-moedas -f WebApi/Dockerfile . </code>
