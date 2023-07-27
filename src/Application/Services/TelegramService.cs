@@ -63,9 +63,9 @@ public class TelegramService : ITelegramService
         if (menorCotacaoDoPeriodo is not null)
             sb.AppendLine($"*Menor Cotação do Período:* {menorCotacaoDoPeriodo.Bid} - {Utils.ConverterTimestampParaData(menorCotacaoDoPeriodo.Timestamp)}");
 
-        var maiorCotacaoDoPeriodo = dtos.FirstOrDefault(x => x.Bid == dtos.Max(x => x.Bid));
+        var maiorCotacaoDoPeriodo = dtos.FirstOrDefault(x => x.Ask == dtos.Max(x => x.Ask));
         if (maiorCotacaoDoPeriodo is not null)
-            sb.AppendLine($"*Menor Cotação do Período:* {maiorCotacaoDoPeriodo.Bid} - {Utils.ConverterTimestampParaData(maiorCotacaoDoPeriodo.Timestamp)}");
+            sb.AppendLine($"*Maior Cotação do Período:* {maiorCotacaoDoPeriodo.Ask} - {Utils.ConverterTimestampParaData(maiorCotacaoDoPeriodo.Timestamp)}");
 
         return sb.ToString();
     }
